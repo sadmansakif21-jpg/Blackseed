@@ -132,20 +132,34 @@ footer{
     padding:20px;
     background:#000;
 }
-.coffee{
+.particle{
     position:fixed;
     top:-50px;
     z-index:9999;
+    pointer-events:auto;
     cursor:pointer;
     user-select:none;
-    animation:fall linear forwards;
+    animation:coffeeFall linear forwards;
 }
 
-@keyframes fall{
-    0%{
-        transform:translateY(-50px) rotate(0deg);
-    }
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-    }
+@keyframes coffeeFall{
+
+0%{
+transform:translateY(-50px) translateX(0) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+50%{
+transform:translateY(50vh) translateX(40px) rotate(180deg);
+}
+
+100%{
+transform:translateY(110vh) translateX(-40px) rotate(360deg);
+opacity:0;
+}
+
 }
